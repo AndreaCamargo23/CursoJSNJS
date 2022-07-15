@@ -1,23 +1,19 @@
 /**
  * Funciones
+ * Funcion flecha, alternativas para compactar arrow
+ * Funciones de expresion, no tienen un nombre
+ * Se les conoce tambien como funciones anonimas
+ * Primera forma, declarativa
  */
 
-//Primera forma, declarativa
+
 function saludar(){
-//Cuerpo de la función 
 console.log("Hola");
 }
-
 saludar();
-
-//Funciones de expresion, no tienen un nombre
-//Se les conoce tambien como funciones anonimas
-
 var suma = function(a,b){
     return  (a+b);
 }
-
-//Funcion flecha, alternativas para compactar arrow
 var restar = (a,b) =>{
     return a-b;
 }
@@ -265,11 +261,29 @@ var ordenado = array.sort((a,b)=>a-b);
 console.log(ordenado);
 
 var nombre =['Andrea','Milena','Camargo','Gonzalez'];
-nombre.splice(1,1);//empiece a eliminar desde la posicion, segun parametro la cantidad de elemento que 
+nombre.splice(0,2);//empiece a eliminar desde la posicion, segun parametro la cantidad de elemento que 
 //queremos eliminar. Tercer parametro remplaza o modificar
 console.log(nombre);
 
+const obj = { a: 1, b: 2, c: 3, }; const obj2 = { ...obj, a: 0, }; console.log(obj2.a, obj2.b); 
+
+const a = { x: 1 }; const b = { x: 1 }; 
+console.log( a === b);
+
+let bear = { sound: "roar", roar(){ console.log(this.sound); } } bear.sound = "grunt"; let bearSound = bear.roar; bearSound(); 
+
+
+class RainForest{ static minimumRainFall = 60; } let congo = new RainForest(); RainForest.minimumRainFall = 80; console.log(congo.minimumRainFall); 
+
 var resultado=nombre.slice(1,2);//desde la posicion uno hasta la posicion 2
 console.log(resultado);
+let scores = []; scores.push(1, 2); scores.pop(); scores.push(3, 4); scores.pop(); score = scores.reduce((a, b) => a + b); console.log(score); 
 
+
+
+const myFunc = () => { const a = 2; return () => console.log("a is " + a); }; const a = 1; const test = myFunc(); test(); 
+
+function printA() { console.log(answer); var answer = 1; }; printA(); printA(); 
+
+const x = 6 % 2; const y = x ? 'One': 'Two'; console.log(y); 
 
